@@ -67,7 +67,11 @@ export async function sendWhatsAppMessage(
 
     const data = await res.json();
     if (!res.ok) {
-      console.error("[WhatsApp API Error]:", data);
+      console.error("[WhatsApp API Error]:", JSON.stringify(data));
+      return {
+        error: data?.error || data,
+        simulated: false,
+      };
     }
     return data;
   } catch (error) {

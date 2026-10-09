@@ -113,7 +113,8 @@ export async function POST(request: NextRequest) {
     );
 
     // Send AI reply back to WhatsApp
-    await sendWhatsAppMessage(phone, aiResult.reply);
+    const sendResult = await sendWhatsAppMessage(phone, aiResult.reply);
+    const sendFailed = Boolean((sendResult as any)?.error);
 
     // Store assistant message with tool executions
     await storage.addMessage({
@@ -122,13 +123,14 @@ export async function POST(request: NextRequest) {
       content: aiResult.reply,
       type: "text",
       tool_executions: aiResult.toolExecutions,
-      status: "delivered",
+      status: sendFailed ? "failed" : "delivered",
     });
 
     return Response.json({
-      status: "replied",
+      status: sendFailed ? "send_failed" : "replied",
       conversation_id: conversation.id,
       tools_executed: aiResult.toolExecutions.length,
+      send_error: (sendResult as any)?.error || null,
     });
   } catch (error) {
     console.error("[Webhook Error]:", error);

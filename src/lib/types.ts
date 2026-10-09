@@ -33,7 +33,7 @@ export interface Message {
   content: string;
   type?: MessageType;
   whatsapp_msg_id?: string | null;
-  status?: "sent" | "delivered" | "read";
+  status?: "sent" | "delivered" | "read" | "failed";
   tool_executions?: ToolExecution[];
   created_at: string;
 }

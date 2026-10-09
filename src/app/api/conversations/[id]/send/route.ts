@@ -22,14 +22,19 @@ export async function POST(
   // Send via WhatsApp API or Simulator
   const waResult = await sendWhatsAppMessage(conversation.phone, message.trim());
 
+  const isFailed = Boolean((waResult as any)?.error);
+
   // Store message in database
   const storedMsg = await storage.addMessage({
     conversation_id: id,
     role: "assistant",
     content: message.trim(),
     type: "text",
-    status: waResult.simulated ? "delivered" : "sent",
+    status: isFailed ? "failed" : waResult.simulated ? "delivered" : "sent",
   });
 
-  return Response.json(storedMsg);
+  return Response.json({
+    ...storedMsg,
+    send_result: waResult,
+  });
 }
