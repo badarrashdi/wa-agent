@@ -26,7 +26,7 @@ export default function AppointmentModal({
   // Form fields
   const [customerName, setCustomerName] = useState(defaultName);
   const [phone, setPhone] = useState(defaultPhone);
-  const [service, setService] = useState("Routine Cleaning & Checkup");
+  const [service, setService] = useState("30-Min Global Brand Strategy Discovery Session");
   const [date, setDate] = useState("2026-10-16");
   const [timeSlot, setTimeSlot] = useState("10:00 AM");
 

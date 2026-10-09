@@ -256,11 +256,11 @@ export default function Dashboard() {
             <Sparkles className="w-3.5 h-3.5 text-amber-400" />
             <span className="text-zinc-400 font-medium">Business:</span>
             <span className="font-semibold text-white">
-              {systemStatus?.active_persona === "dental_clinic"
-                ? "Toothsi Dental Clinic"
-                : systemStatus?.active_persona === "customer_support"
-                ? "SwiftHelp Support"
-                : "Aura Essentials"}
+              {systemStatus?.active_persona === "crowd_agency" || !systemStatus?.active_persona
+                ? "Crowd - Global Marketing Agency"
+                : systemStatus?.active_persona === "performance_marketing"
+                ? "Crowd Performance Media"
+                : "Crowd Creative Studio"}
             </span>
           </div>
 
@@ -675,22 +675,22 @@ export default function Dashboard() {
                     Quick Reply:
                   </span>
                   <button
-                    onClick={() => handleSend("Your dental appointment is officially confirmed! See you then.")}
+                    onClick={() => handleSend("Your 30-minute Brand Strategy Discovery Session with our Senior Partner is confirmed! Looking forward to speaking.")}
                     className="px-2.5 py-1 rounded-full bg-white/5 hover:bg-white/10 text-zinc-300 shrink-0 border border-white/10 transition cursor-pointer"
                   >
-                    Confirm Appointment
+                    Confirm Strategy Call
                   </button>
                   <button
-                    onClick={() => handleSend("Our clinic is located at 123 Health Ave, Suite 400. Parking is free.")}
+                    onClick={() => handleSend("Crowd's London HQ is at 20-22 Wenlock Road, N1 7GU. We also have offices in Dubai, San Francisco, and Amsterdam.")}
                     className="px-2.5 py-1 rounded-full bg-white/5 hover:bg-white/10 text-zinc-300 shrink-0 border border-white/10 transition cursor-pointer"
                   >
-                    Share Address
+                    Share Office Locations
                   </button>
                   <button
-                    onClick={() => handleSend("I have alerted our dental supervisor. We are reviewing your record right now.")}
+                    onClick={() => handleSend("I have alerted our Managing Director to review your RFP and brand brief right away.")}
                     className="px-2.5 py-1 rounded-full bg-white/5 hover:bg-white/10 text-zinc-300 shrink-0 border border-white/10 transition cursor-pointer"
                   >
-                    Clinical Callback
+                    Director Escalation
                   </button>
                 </div>
 
@@ -770,7 +770,7 @@ export default function Dashboard() {
                   {selected.name ? selected.name.slice(0, 2).toUpperCase() : selected.phone.slice(-2)}
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-white">{selected.name || "WhatsApp Patient"}</h4>
+                  <h4 className="text-sm font-bold text-white">{selected.name || "WhatsApp Client"}</h4>
                   <p className="text-xs text-zinc-400 font-mono">{selected.phone}</p>
                 </div>
               </div>

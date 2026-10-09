@@ -227,9 +227,10 @@ export default function SettingsModal({
                   onChange={(e) => setSettings({ ...settings, provider: e.target.value as any })}
                   className="w-full bg-[#121214] border border-white/10 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500"
                 >
-                  <option value="openrouter">OpenRouter (Claude 3.5 Sonnet, GPT-4o, DeepSeek)</option>
+                  <option value="gemini">Google Gemini (Gemini 2.5 Flash / Gemini 1.5 Flash)</option>
                   <option value="groq">Groq (Ultra-fast Llama 3.3 70B - Recommended for WhatsApp)</option>
                   <option value="openai">OpenAI Direct (GPT-4o, GPT-4o-mini)</option>
+                  <option value="openrouter">OpenRouter (Claude 3.5 Sonnet, DeepSeek)</option>
                 </select>
               </div>
 

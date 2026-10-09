@@ -13,24 +13,24 @@ interface SimulatorModalProps {
 
 const PRESET_SCENARIOS = [
   {
-    title: "📅 Book Appointment",
-    desc: "Test slot selection and appointment booking tool",
-    message: "Hi! Do you have any openings for a dental cleaning this Friday morning around 10:00 AM?",
+    title: "📅 Book Strategy Call",
+    desc: "Test consultation slot booking with Senior Strategy Director",
+    message: "Hi! We're planning an international rebrand and would like to schedule a 30-min strategy discovery call this Friday at 10:00 AM.",
   },
   {
-    title: "💰 FAQ / Pricing Lookup",
-    desc: "Test knowledge base retrieval for fees and insurance",
-    message: "What are your prices for routine cleaning and teeth whitening? Do you take Delta Dental?",
+    title: "💡 AI Marketing & LLM SEO",
+    desc: "Test knowledge base retrieval for AI workflows & LLM share-of-voice",
+    message: "What AI-powered marketing services do you offer, and how do you optimize brands for LLM Share-of-Voice?",
   },
   {
-    title: "🚨 Emergency Pain Triage",
-    desc: "Test automated detection & immediate escalation to human",
-    message: "I am in unbearable severe pain and my jaw is swelling! I need to talk to a doctor right away!",
+    title: "🚀 Urgent $250k RFP (Escalation)",
+    desc: "Test automated detection & immediate escalation to Managing Director",
+    message: "We have an urgent $250k RFP for an omni-channel global campaign with a 48h deadline. Can I speak with your Managing Director today?",
   },
   {
-    title: "📍 Location & Hours",
-    desc: "Test general business information lookup",
-    message: "Where is your clinic located and what are your opening hours on Saturday?",
+    title: "📍 Global Offices & Clients",
+    desc: "Test agency credentials, office locations, and case studies",
+    message: "Where are your global offices located, and what campaigns have you delivered for brands like Specialized and Vans?",
   },
 ];
 
@@ -38,8 +38,8 @@ export default function SimulatorModal({
   isOpen,
   onClose,
   onMessageSent,
-  currentPhone = "+1 (555) 234-5678",
-  currentName = "Sarah Jenkins",
+  currentPhone = "+44 7700 900123",
+  currentName = "Liam Henderson",
 }: SimulatorModalProps) {
   const [phone, setPhone] = useState(currentPhone);
   const [name, setName] = useState(currentName);

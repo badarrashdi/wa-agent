@@ -24,35 +24,43 @@ interface DatabaseSchema {
 const SEED_ARTICLES: KnowledgeArticle[] = [
   {
     id: "kb-1",
-    title: "Clinic Hours & Location",
-    category: "General",
+    title: "About Crowd & Global Office Hubs",
+    category: "Agency Overview",
     content:
-      "Dental Care Clinic is located at 123 Health Ave, Suite 400. Operating hours: Monday to Friday 9:00 AM – 6:00 PM, Saturday 9:00 AM – 1:00 PM. Closed on Sundays.",
-    keywords: ["hours", "location", "address", "timing", "open", "directions"],
+      "Crowd (thisiscrowd.com) is an independent global marketing agency helping ambitious brands amplify sales, profits, and audience growth. Headquartered in London (20-22 Wenlock Road, N1 7GU), with regional hubs in Dubai (Dubai Media City), San Francisco, Amsterdam, Shenzhen / Hong Kong, and Sydney. Operating hours: Monday to Friday 9:00 AM – 6:00 PM (GMT & GST). Contact: results@thisiscrowd.com | +44 20 7101 4455.",
+    keywords: ["about", "offices", "location", "address", "london", "dubai", "san francisco", "amsterdam", "contact"],
   },
   {
     id: "kb-2",
-    title: "Services & Price Estimates",
+    title: "Core Marketing Capabilities & Services",
     category: "Services",
     content:
-      "Routine Checkup & Cleaning: $80 - $120. Teeth Whitening: $250. Fillings: $120 - $200 per tooth. Root Canal: $600 - $900. Invisalign consultations are complimentary.",
-    keywords: ["price", "cost", "whitening", "cleaning", "filling", "root canal", "services", "fees"],
+      "Crowd offers full-service growth marketing: 1. Brand Strategy & Positioning (brand identity, architecture, market entry); 2. Creative & Digital Experiences (custom web design, UI/UX, interactive apps); 3. AI-Powered Marketing & LLM Share-of-Voice (generative content, AI search visibility); 4. Performance Marketing (SEO, Google Ads, Paid Social, Programmatic); 5. Global Localisation & Cultural Adaptation; 6. Video Production & Social Content.",
+    keywords: ["services", "capabilities", "branding", "web design", "seo", "ppc", "paid media", "social media", "video"],
   },
   {
     id: "kb-3",
-    title: "Insurance & Payment Methods",
-    category: "Billing",
+    title: "AI Marketing & LLM Share-of-Voice Strategy",
+    category: "Innovation & AI",
     content:
-      "We accept Delta Dental, Cigna, MetLife, Aetna, and Guardian. For out-of-network patients, we provide itemized super‌ایlls. We also offer 0% interest financing through CareCredit.",
-    keywords: ["insurance", "payment", "delta", "cigna", "metlife", "carecredit", "credit card"],
+      "As search shifts from traditional engines to AI chatbots (ChatGPT, Perplexity, Google Gemini), brands must monitor their LLM Share-of-Voice. Crowd audits how AI models perceive and cite your brand, optimizes entity relationships, and builds automated AI content workflows to guarantee brand dominance in the AI search era.",
+    keywords: ["ai", "llm", "chatgpt", "perplexity", "gemini", "share of voice", "artificial intelligence", "ai marketing"],
   },
   {
     id: "kb-4",
-    title: "Emergency Dental Care Policy",
-    category: "Emergency",
+    title: "Client Case Studies & Proven Results",
+    category: "Case Studies",
     content:
-      "For severe toothache, broken tooth, or facial trauma, same-day emergency slots are held every day from 11:00 AM to 1:00 PM and 4:00 PM to 5:00 PM. Call emergency hotline immediately or alert our staff.",
-    keywords: ["emergency", "pain", "broken", "severe", "trauma", "urgent", "bleeding"],
+      "Crowd has driven high-impact global growth for leading brands: • Specialized: International digital experience and e-bike campaign; • Vans: Experiential activation & social reach; • Razor: Transcultural localisation for Asian & European markets; • Asendia: B2B sustainable logistics branding; • Miraggio Residences: Luxury real estate digital identity; • Kenwood: Global kitchen appliance digital marketing.",
+    keywords: ["clients", "case studies", "specialized", "vans", "razor", "asendia", "kenwood", "results", "portfolio"],
+  },
+  {
+    id: "kb-5",
+    title: "Engagement Models, Budgets & Discovery Calls",
+    category: "Commercials",
+    content:
+      "We offer flexible engagement structures tailored to brand growth stages: 1. Strategic Discovery Sprints (Fixed scope, 4-6 weeks from $15,000 / £12,000); 2. Monthly Growth Retainers (Integrated creative, paid media, and SEO from $8,000/mo); 3. Full Brand & Digital Transformation (Custom enterprise RFPs). We invite prospective clients to a complimentary 30-minute discovery consultation with a Senior Strategy Director.",
+    keywords: ["pricing", "cost", "budget", "retainer", "rates", "rfp", "discovery call", "consultation"],
   },
 ];
 
@@ -62,42 +70,42 @@ const SEED_DATA: DatabaseSchema = {
   conversations: [
     {
       id: "conv-101",
-      phone: "+1 (555) 234-5678",
-      name: "Sarah Jenkins",
+      phone: "+44 7700 900123",
+      name: "Liam Henderson",
       mode: "agent",
       status: "active",
-      updated_at: new Date(Date.now() - 1000 * 60 * 12).toISOString(),
+      updated_at: new Date(Date.now() - 1000 * 60 * 15).toISOString(),
       created_at: new Date(Date.now() - 1000 * 60 * 60 * 24).toISOString(),
       metadata: {
         sentiment: "positive",
-        tags: ["appointment-booked", "cleaning"],
+        tags: ["brand-strategy", "discovery-booked"],
       },
     },
     {
       id: "conv-102",
-      phone: "+1 (555) 876-5432",
-      name: "Marcus Vance",
+      phone: "+971 50 123 4567",
+      name: "Elena Rostova",
       mode: "human",
       status: "escalated",
       updated_at: new Date(Date.now() - 1000 * 60 * 4).toISOString(),
       created_at: new Date(Date.now() - 1000 * 60 * 60 * 3).toISOString(),
       metadata: {
         sentiment: "frustrated",
-        escalation_reason: "Severe pain after crown procedure requesting doctor callback",
-        tags: ["emergency", "needs-human"],
+        escalation_reason: "Urgent Global RFP with $250k budget requesting direct Managing Director takeover",
+        tags: ["rfp", "enterprise", "director-takeover"],
       },
     },
     {
       id: "conv-103",
-      phone: "+1 (555) 345-9876",
-      name: "Emily Watson",
+      phone: "+1 (415) 555-8921",
+      name: "Marcus Chen",
       mode: "agent",
       status: "active",
       updated_at: new Date(Date.now() - 1000 * 60 * 45).toISOString(),
-      created_at: new Date(Date.now() - 1000 * 60 * 60 * 5).toISOString(),
+      created_at: new Date(Date.now() - 1000 * 60 * 60 * 6).toISOString(),
       metadata: {
         sentiment: "neutral",
-        tags: ["pricing-inquiry"],
+        tags: ["ai-marketing", "llm-share-of-voice"],
       },
     },
   ],
@@ -106,70 +114,70 @@ const SEED_DATA: DatabaseSchema = {
       id: "msg-1",
       conversation_id: "conv-101",
       role: "user",
-      content: "Hi! Do you have an opening for a routine cleaning this Friday morning?",
+      content: "Hello! We're a European FinTech scaleup planning an international rebrand and market expansion. Can we book a strategy discovery session?",
       type: "text",
-      whatsapp_msg_id: "wamid.seed01",
+      whatsapp_msg_id: "wamid.crowd01",
       status: "read",
-      created_at: new Date(Date.now() - 1000 * 60 * 15).toISOString(),
+      created_at: new Date(Date.now() - 1000 * 60 * 18).toISOString(),
     },
     {
       id: "msg-2",
       conversation_id: "conv-101",
       role: "assistant",
       content:
-        "Hello Sarah! Yes, we have openings this Friday at 10:00 AM and 11:30 AM with Dr. Smith. Would 10:00 AM work well for you?",
+        "Hello Liam! Welcome to Crowd. We'd be delighted to collaborate on your international expansion. Our senior strategy directors have slots open this Friday at 10:00 AM and 02:00 PM GMT. Would 10:00 AM suit your team?",
       type: "text",
       status: "read",
       tool_executions: [
         {
           toolName: "check_availability",
-          args: { date: "This Friday", service: "cleaning" },
-          result: { available_slots: ["10:00 AM", "11:30 AM", "2:00 PM"] },
+          args: { date: "This Friday", service: "Brand Strategy Call" },
+          result: { available_slots: ["10:00 AM", "02:00 PM", "04:30 PM"] },
         },
       ],
-      created_at: new Date(Date.now() - 1000 * 60 * 14).toISOString(),
+      created_at: new Date(Date.now() - 1000 * 60 * 17).toISOString(),
     },
     {
       id: "msg-3",
       conversation_id: "conv-101",
       role: "user",
-      content: "Yes, 10:00 AM is perfect! Please book that for me.",
+      content: "10:00 AM this Friday is ideal. Let's confirm that please.",
       type: "text",
-      whatsapp_msg_id: "wamid.seed02",
+      whatsapp_msg_id: "wamid.crowd02",
       status: "read",
-      created_at: new Date(Date.now() - 1000 * 60 * 13).toISOString(),
+      created_at: new Date(Date.now() - 1000 * 60 * 16).toISOString(),
     },
     {
       id: "msg-4",
       conversation_id: "conv-101",
       role: "assistant",
       content:
-        "🎉 You're all set! I have booked your routine dental cleaning for this Friday at 10:00 AM. Appointment ID: #APT-401. Please arrive 10 minutes early. Let us know if you have any questions!",
+        "🎉 Confirmed! Your **30-Minute Brand Strategy Discovery Session** with Crowd is scheduled for this Friday at 10:00 AM GMT (Consultation ID: #APT-501). One of our Senior Strategy Partners will host the session. Please feel free to email any brand briefs in advance to results@thisiscrowd.com.",
       type: "text",
       status: "delivered",
       tool_executions: [
         {
           toolName: "book_appointment",
           args: {
-            customer_name: "Sarah Jenkins",
-            phone: "+1 (555) 234-5678",
+            customer_name: "Liam Henderson",
+            phone: "+44 7700 900123",
             date: "2026-10-16",
             time_slot: "10:00 AM",
-            service: "Dental Cleaning",
+            service: "Global Brand Strategy Discovery Session",
           },
-          result: { appointment_id: "APT-401", status: "confirmed" },
+          result: { appointment_id: "APT-501", status: "confirmed" },
         },
       ],
-      created_at: new Date(Date.now() - 1000 * 60 * 12).toISOString(),
+      created_at: new Date(Date.now() - 1000 * 60 * 15).toISOString(),
     },
-    // Marcus Vance conversation (escalated)
+    // Elena Rostova (Escalated RFP)
     {
       id: "msg-5",
       conversation_id: "conv-102",
       role: "user",
-      content: "Hello, I had a crown done 2 days ago and now my gum is swelling and I'm in unbearable pain! Can I speak to a doctor right away?",
+      content: "Hi Crowd, we are releasing an urgent $250k global RFP for an omni-channel luxury campaign in Europe and the Gulf. Submission deadline is in 48 hours. I need to speak directly with your Managing Director today.",
       type: "text",
-      whatsapp_msg_id: "wamid.seed03",
+      whatsapp_msg_id: "wamid.crowd03",
       status: "read",
       created_at: new Date(Date.now() - 1000 * 60 * 5).toISOString(),
     },
@@ -178,17 +186,17 @@ const SEED_DATA: DatabaseSchema = {
       conversation_id: "conv-102",
       role: "assistant",
       content:
-        "I am so sorry to hear that you are in severe pain, Marcus. I have immediately transferred this conversation to our emergency clinical team and alerted our on-call dental supervisor. A staff member is reviewing your chart right now and will message or call you within a few minutes. If you feel dizzy or experience severe swelling spreading to your throat, please dial 911 immediately.",
+        "🚀 Thank you for reaching out, Elena. Due to the high priority and imminent deadline of your RFP, I have immediately alerted our Managing Director and Senior Partners in our London and Dubai offices. A senior agency director has taken over this thread and will message or call you shortly. You may also send the RFP documentation directly to results@thisiscrowd.com.",
       type: "text",
       status: "delivered",
       tool_executions: [
         {
           toolName: "escalate_to_human",
           args: {
-            reason: "Severe pain and gum swelling after crown procedure",
-            urgency: "emergency",
+            reason: "High-value $250k enterprise RFP with 48h deadline requesting Managing Director takeover",
+            urgency: "high",
           },
-          result: { status: "escalated_to_human", assigned_queue: "clinical_emergency" },
+          result: { status: "escalated_to_human", assigned_queue: "managing_director_partners" },
         },
       ],
       created_at: new Date(Date.now() - 1000 * 60 * 4).toISOString(),
@@ -196,21 +204,20 @@ const SEED_DATA: DatabaseSchema = {
   ],
   appointments: [
     {
-      id: "APT-401",
+      id: "APT-501",
       conversation_id: "conv-101",
-      phone: "+1 (555) 234-5678",
-      customer_name: "Sarah Jenkins",
-      service: "Dental Cleaning",
+      phone: "+44 7700 900123",
+      customer_name: "Liam Henderson",
+      service: "Global Brand Strategy Discovery Session",
       date: "2026-10-16",
       time_slot: "10:00 AM",
       status: "confirmed",
-      notes: "First time visit, booked via WhatsApp Agent",
-      created_at: new Date(Date.now() - 1000 * 60 * 12).toISOString(),
+      notes: "FinTech rebrand & European expansion. Booked via Crowd WhatsApp Agent",
+      created_at: new Date(Date.now() - 1000 * 60 * 15).toISOString(),
     },
   ],
 };
 
-// Memory fallback cache in case filesystem access is restricted
 let memoryCache: DatabaseSchema | null = null;
 
 function ensureDataFile(): DatabaseSchema {
@@ -223,7 +230,14 @@ function ensureDataFile(): DatabaseSchema {
 
     if (fs.existsSync(DATA_FILE)) {
       const content = fs.readFileSync(DATA_FILE, "utf-8");
-      memoryCache = JSON.parse(content);
+      const parsed = JSON.parse(content);
+      // If old schema had dental clinic, refresh to Crowd
+      if (parsed.settings?.persona === "dental_clinic" || !parsed.settings?.persona) {
+        fs.writeFileSync(DATA_FILE, JSON.stringify(SEED_DATA, null, 2), "utf-8");
+        memoryCache = JSON.parse(JSON.stringify(SEED_DATA));
+        return memoryCache!;
+      }
+      memoryCache = parsed;
       return memoryCache!;
     }
 
@@ -274,7 +288,6 @@ export const localStore = {
 
   getConversationByPhone(phone: string): Conversation | null {
     const data = ensureDataFile();
-    // Normalize phone comparison
     const cleanPhone = phone.replace(/\D/g, "");
     return (
       data.conversations.find(
@@ -333,7 +346,6 @@ export const localStore = {
 
     data.messages.push(newMsg);
 
-    // Update conversation updated_at
     const conv = data.conversations.find((c) => c.id === msg.conversation_id);
     if (conv) {
       conv.updated_at = newMsg.created_at;
@@ -357,7 +369,7 @@ export const localStore = {
   createAppointment(apt: Omit<Appointment, "id" | "created_at">): Appointment {
     const data = ensureDataFile();
     const newApt: Appointment = {
-      id: "APT-" + Math.floor(100 + Math.random() * 900),
+      id: "APT-" + Math.floor(500 + Math.random() * 499),
       created_at: new Date().toISOString(),
       ...apt,
     };

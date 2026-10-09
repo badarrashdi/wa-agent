@@ -10,16 +10,19 @@ export async function GET() {
   const settings = await storage.getSettings();
 
   const hasApiKey = !!(
+    process.env.GEMINI_API_KEY ||
     process.env.OPENROUTER_API_KEY ||
     process.env.OPENAI_API_KEY ||
     process.env.GROQ_API_KEY
   );
 
+  const activeProvider = process.env.GEMINI_API_KEY ? "Google Gemini" : settings.provider.toUpperCase();
+
   return Response.json({
     storage_provider: isSupabase ? "Supabase (PostgreSQL)" : "Local Persistent Engine (Zero-Setup)",
     is_supabase_connected: isSupabase,
     is_whatsapp_connected: isWhatsApp,
-    ai_status: hasApiKey ? `Connected (${settings.provider.toUpperCase()})` : "Zero-Config Fallback Simulator",
+    ai_status: hasApiKey ? `Connected (${activeProvider})` : "Zero-Config Fallback Simulator",
     has_ai_key: hasApiKey,
     conversations_count: convos.length,
     appointments_count: appointments.length,

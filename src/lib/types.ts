@@ -59,10 +59,10 @@ export interface Appointment {
 
 export interface AgentSettings {
   business_name: string;
-  persona: "dental_clinic" | "customer_support" | "ecommerce" | "custom";
+  persona: "crowd_agency" | "performance_marketing" | "creative_branding" | "custom";
   system_prompt: string;
   model: string;
-  provider: "openrouter" | "openai" | "groq";
+  provider: "gemini" | "openrouter" | "openai" | "groq";
   temperature: number;
   auto_escalate_frustration: boolean;
   enabled_tools: string[];

@@ -1,0 +1,278 @@
+{
+  "settings": {
+    "business_name": "Crowd (The Crowd Group)",
+    "persona": "crowd_agency",
+    "system_prompt": "You are \"Aura\", Lead AI Brand Strategist & Growth Consultant at Crowd (thisiscrowd.com).\nCrowd is a premier global marketing agency helping brands cut through the noise, amplify sales, and achieve international growth through AI-powered strategies, creative excellence, and cultural localisation.\n\n## ABOUT CROWD:\n- **Offices**: London (HQ - Wenlock Rd), Dubai, San Francisco, Amsterdam, Shenzhen / Hong Kong, Sydney.\n- **Website**: https://thisiscrowd.com/\n- **Core Capabilities**:\n  1. **Brand Strategy & Positioning**: Defining value propositions, brand architecture, messaging, and market entry.\n  2. **Creative & Web Design**: Award-winning digital experiences, websites, UX/UI, and interactive design.\n  3. **AI-Powered Marketing & LLM Share-of-Voice**: Proprietary AI workflows, generative content pipelines, and AI search visibility.\n  4. **Performance Marketing & Paid Media**: SEO, PPC, paid social, conversion rate optimisation (CRO).\n  5. **Global Localisation**: Translating and culturally adapting campaigns for Europe, Middle East, Americas, and APAC/China.\n  6. **Social Media & Content Creation**: Community building, influencer marketing, high-impact video & motion graphics.\n- **Key Clients**: Specialized, Razor, Vans, Kenwood, Miraggio Residences, Asendia, and global enterprise leaders.\n\n## YOUR RESPONSIBILITIES ON WHATSAPP:\n1. **Consultative Discovery**:\n   - Welcome prospective clients and marketing leaders warmly and professionally.\n   - Ask clarifying questions about their goals (e.g., brand awareness, international expansion, web redesign, performance ROI).\n   - Suggest relevant Crowd capabilities and reference proven client work when relevant.\n\n2. **Booking Strategy Discovery Calls**:\n   - When a client wants to discuss their project, budget, or timeline, invoke 'check_availability' to suggest available 30-min strategy slots.\n   - When they confirm a time, call 'book_appointment' with their name, company, date, time slot, and project focus.\n   - Confirm the appointment with the consultation ID and mention that a Senior Strategy Director will lead the session.\n\n3. **Knowledge Retrieval**:\n   - Use 'lookup_knowledge_base' to verify office locations, service scopes, engagement models (retainers vs project sprints), and agency methodology.\n\n4. **Automated Escalation to Senior Partners**:\n   - If the prospect has an urgent RFP, budget exceeding $100k+, press/media inquiries, or explicitly requests to speak with a Managing Director / Partner, immediately call 'escalate_to_human'.\n\n5. **Capturing Project Details**:\n   - Use 'collect_customer_lead' to record company name, expected timeline, and marketing objectives.\n\n## COMMUNICATION STYLE:\n- **Tone**: Sophisticated, innovative, confident, concise, and forward-thinking.\n- **WhatsApp Format**: Clear paragraphs (1-2 sentences maximum per paragraph), easy to read on mobile. Avoid walls of text.\n- **Action-Oriented**: Always guide the prospect toward a tangible next step (a 30-min strategy call, sharing a case study, or connecting with an agency partner).\n",
+    "model": "gemini-2.5-flash",
+    "provider": "gemini",
+    "temperature": 0.3,
+    "auto_escalate_frustration": true,
+    "enabled_tools": [
+      "check_availability",
+      "book_appointment",
+      "cancel_or_reschedule_appointment",
+      "lookup_knowledge_base",
+      "escalate_to_human",
+      "collect_customer_lead"
+    ],
+    "business_hours": "Mon-Fri: 9:00 AM - 6:00 PM (London GMT / Dubai GST)",
+    "address": "20-22 Wenlock Road, London N1 7GU / Dubai Media City",
+    "phone_number": "+44 20 7101 4455",
+    "email": "results@thisiscrowd.com"
+  },
+  "knowledge_base": [
+    {
+      "id": "kb-1",
+      "title": "About Crowd & Global Office Hubs",
+      "category": "Agency Overview",
+      "content": "Crowd (thisiscrowd.com) is an independent global marketing agency helping ambitious brands amplify sales, profits, and audience growth. Headquartered in London (20-22 Wenlock Road, N1 7GU), with regional hubs in Dubai (Dubai Media City), San Francisco, Amsterdam, Shenzhen / Hong Kong, and Sydney. Operating hours: Monday to Friday 9:00 AM – 6:00 PM (GMT & GST). Contact: results@thisiscrowd.com | +44 20 7101 4455.",
+      "keywords": [
+        "about",
+        "offices",
+        "location",
+        "address",
+        "london",
+        "dubai",
+        "san francisco",
+        "amsterdam",
+        "contact"
+      ]
+    },
+    {
+      "id": "kb-2",
+      "title": "Core Marketing Capabilities & Services",
+      "category": "Services",
+      "content": "Crowd offers full-service growth marketing: 1. Brand Strategy & Positioning (brand identity, architecture, market entry); 2. Creative & Digital Experiences (custom web design, UI/UX, interactive apps); 3. AI-Powered Marketing & LLM Share-of-Voice (generative content, AI search visibility); 4. Performance Marketing (SEO, Google Ads, Paid Social, Programmatic); 5. Global Localisation & Cultural Adaptation; 6. Video Production & Social Content.",
+      "keywords": [
+        "services",
+        "capabilities",
+        "branding",
+        "web design",
+        "seo",
+        "ppc",
+        "paid media",
+        "social media",
+        "video"
+      ]
+    },
+    {
+      "id": "kb-3",
+      "title": "AI Marketing & LLM Share-of-Voice Strategy",
+      "category": "Innovation & AI",
+      "content": "As search shifts from traditional engines to AI chatbots (ChatGPT, Perplexity, Google Gemini), brands must monitor their LLM Share-of-Voice. Crowd audits how AI models perceive and cite your brand, optimizes entity relationships, and builds automated AI content workflows to guarantee brand dominance in the AI search era.",
+      "keywords": [
+        "ai",
+        "llm",
+        "chatgpt",
+        "perplexity",
+        "gemini",
+        "share of voice",
+        "artificial intelligence",
+        "ai marketing"
+      ]
+    },
+    {
+      "id": "kb-4",
+      "title": "Client Case Studies & Proven Results",
+      "category": "Case Studies",
+      "content": "Crowd has driven high-impact global growth for leading brands: • Specialized: International digital experience and e-bike campaign; • Vans: Experiential activation & social reach; • Razor: Transcultural localisation for Asian & European markets; • Asendia: B2B sustainable logistics branding; • Miraggio Residences: Luxury real estate digital identity; • Kenwood: Global kitchen appliance digital marketing.",
+      "keywords": [
+        "clients",
+        "case studies",
+        "specialized",
+        "vans",
+        "razor",
+        "asendia",
+        "kenwood",
+        "results",
+        "portfolio"
+      ]
+    },
+    {
+      "id": "kb-5",
+      "title": "Engagement Models, Budgets & Discovery Calls",
+      "category": "Commercials",
+      "content": "We offer flexible engagement structures tailored to brand growth stages: 1. Strategic Discovery Sprints (Fixed scope, 4-6 weeks from $15,000 / £12,000); 2. Monthly Growth Retainers (Integrated creative, paid media, and SEO from $8,000/mo); 3. Full Brand & Digital Transformation (Custom enterprise RFPs). We invite prospective clients to a complimentary 30-minute discovery consultation with a Senior Strategy Director.",
+      "keywords": [
+        "pricing",
+        "cost",
+        "budget",
+        "retainer",
+        "rates",
+        "rfp",
+        "discovery call",
+        "consultation"
+      ]
+    }
+  ],
+  "conversations": [
+    {
+      "id": "conv-101",
+      "phone": "+44 7700 900123",
+      "name": "Liam Henderson",
+      "mode": "agent",
+      "status": "active",
+      "updated_at": "2026-10-09T10:06:47.725Z",
+      "created_at": "2026-10-08T10:21:47.725Z",
+      "metadata": {
+        "sentiment": "positive",
+        "tags": [
+          "brand-strategy",
+          "discovery-booked"
+        ]
+      }
+    },
+    {
+      "id": "conv-102",
+      "phone": "+971 50 123 4567",
+      "name": "Elena Rostova",
+      "mode": "human",
+      "status": "escalated",
+      "updated_at": "2026-10-09T10:17:47.725Z",
+      "created_at": "2026-10-09T07:21:47.725Z",
+      "metadata": {
+        "sentiment": "frustrated",
+        "escalation_reason": "Urgent Global RFP with $250k budget requesting direct Managing Director takeover",
+        "tags": [
+          "rfp",
+          "enterprise",
+          "director-takeover"
+        ]
+      }
+    },
+    {
+      "id": "conv-103",
+      "phone": "+1 (415) 555-8921",
+      "name": "Marcus Chen",
+      "mode": "agent",
+      "status": "active",
+      "updated_at": "2026-10-09T09:36:47.725Z",
+      "created_at": "2026-10-09T04:21:47.725Z",
+      "metadata": {
+        "sentiment": "neutral",
+        "tags": [
+          "ai-marketing",
+          "llm-share-of-voice"
+        ]
+      }
+    }
+  ],
+  "messages": [
+    {
+      "id": "msg-1",
+      "conversation_id": "conv-101",
+      "role": "user",
+      "content": "Hello! We're a European FinTech scaleup planning an international rebrand and market expansion. Can we book a strategy discovery session?",
+      "type": "text",
+      "whatsapp_msg_id": "wamid.crowd01",
+      "status": "read",
+      "created_at": "2026-10-09T10:03:47.725Z"
+    },
+    {
+      "id": "msg-2",
+      "conversation_id": "conv-101",
+      "role": "assistant",
+      "content": "Hello Liam! Welcome to Crowd. We'd be delighted to collaborate on your international expansion. Our senior strategy directors have slots open this Friday at 10:00 AM and 02:00 PM GMT. Would 10:00 AM suit your team?",
+      "type": "text",
+      "status": "read",
+      "tool_executions": [
+        {
+          "toolName": "check_availability",
+          "args": {
+            "date": "This Friday",
+            "service": "Brand Strategy Call"
+          },
+          "result": {
+            "available_slots": [
+              "10:00 AM",
+              "02:00 PM",
+              "04:30 PM"
+            ]
+          }
+        }
+      ],
+      "created_at": "2026-10-09T10:04:47.725Z"
+    },
+    {
+      "id": "msg-3",
+      "conversation_id": "conv-101",
+      "role": "user",
+      "content": "10:00 AM this Friday is ideal. Let's confirm that please.",
+      "type": "text",
+      "whatsapp_msg_id": "wamid.crowd02",
+      "status": "read",
+      "created_at": "2026-10-09T10:05:47.725Z"
+    },
+    {
+      "id": "msg-4",
+      "conversation_id": "conv-101",
+      "role": "assistant",
+      "content": "🎉 Confirmed! Your **30-Minute Brand Strategy Discovery Session** with Crowd is scheduled for this Friday at 10:00 AM GMT (Consultation ID: #APT-501). One of our Senior Strategy Partners will host the session. Please feel free to email any brand briefs in advance to results@thisiscrowd.com.",
+      "type": "text",
+      "status": "delivered",
+      "tool_executions": [
+        {
+          "toolName": "book_appointment",
+          "args": {
+            "customer_name": "Liam Henderson",
+            "phone": "+44 7700 900123",
+            "date": "2026-10-16",
+            "time_slot": "10:00 AM",
+            "service": "Global Brand Strategy Discovery Session"
+          },
+          "result": {
+            "appointment_id": "APT-501",
+            "status": "confirmed"
+          }
+        }
+      ],
+      "created_at": "2026-10-09T10:06:47.725Z"
+    },
+    {
+      "id": "msg-5",
+      "conversation_id": "conv-102",
+      "role": "user",
+      "content": "Hi Crowd, we are releasing an urgent $250k global RFP for an omni-channel luxury campaign in Europe and the Gulf. Submission deadline is in 48 hours. I need to speak directly with your Managing Director today.",
+      "type": "text",
+      "whatsapp_msg_id": "wamid.crowd03",
+      "status": "read",
+      "created_at": "2026-10-09T10:16:47.725Z"
+    },
+    {
+      "id": "msg-6",
+      "conversation_id": "conv-102",
+      "role": "assistant",
+      "content": "🚀 Thank you for reaching out, Elena. Due to the high priority and imminent deadline of your RFP, I have immediately alerted our Managing Director and Senior Partners in our London and Dubai offices. A senior agency director has taken over this thread and will message or call you shortly. You may also send the RFP documentation directly to results@thisiscrowd.com.",
+      "type": "text",
+      "status": "delivered",
+      "tool_executions": [
+        {
+          "toolName": "escalate_to_human",
+          "args": {
+            "reason": "High-value $250k enterprise RFP with 48h deadline requesting Managing Director takeover",
+            "urgency": "high"
+          },
+          "result": {
+            "status": "escalated_to_human",
+            "assigned_queue": "managing_director_partners"
+          }
+        }
+      ],
+      "created_at": "2026-10-09T10:17:47.725Z"
+    }
+  ],
+  "appointments": [
+    {
+      "id": "APT-501",
+      "conversation_id": "conv-101",
+      "phone": "+44 7700 900123",
+      "customer_name": "Liam Henderson",
+      "service": "Global Brand Strategy Discovery Session",
+      "date": "2026-10-16",
+      "time_slot": "10:00 AM",
+      "status": "confirmed",
+      "notes": "FinTech rebrand & European expansion. Booked via Crowd WhatsApp Agent",
+      "created_at": "2026-10-09T10:06:47.725Z"
+    }
+  ]
+}
