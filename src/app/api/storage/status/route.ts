@@ -16,7 +16,11 @@ export async function GET() {
     process.env.GROQ_API_KEY
   );
 
-  const activeProvider = process.env.GEMINI_API_KEY ? "Google Gemini" : settings.provider.toUpperCase();
+  const activeProvider = process.env.GROQ_API_KEY
+    ? "Groq (GPT-OSS 120B)"
+    : process.env.GEMINI_API_KEY
+    ? "Google Gemini"
+    : settings.provider.toUpperCase();
 
   return Response.json({
     storage_provider: isSupabase ? "Supabase (PostgreSQL)" : "Local Persistent Engine (Zero-Setup)",

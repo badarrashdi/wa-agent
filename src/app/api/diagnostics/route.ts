@@ -5,6 +5,7 @@ export async function GET(request: NextRequest) {
   const phoneId = process.env.WHATSAPP_PHONE_NUMBER_ID;
   const token = process.env.WHATSAPP_ACCESS_TOKEN;
   const verifyToken = process.env.WHATSAPP_VERIFY_TOKEN;
+  const groqKey = process.env.GROQ_API_KEY;
   const geminiKey = process.env.GEMINI_API_KEY;
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -14,11 +15,15 @@ export async function GET(request: NextRequest) {
       WHATSAPP_PHONE_NUMBER_ID: Boolean(phoneId),
       WHATSAPP_ACCESS_TOKEN: Boolean(token),
       WHATSAPP_VERIFY_TOKEN: Boolean(verifyToken),
+      GROQ_API_KEY: Boolean(groqKey),
       GEMINI_API_KEY: Boolean(geminiKey),
       NEXT_PUBLIC_SUPABASE_URL: Boolean(supabaseUrl),
       SUPABASE_SERVICE_ROLE_KEY: Boolean(supabaseKey),
     },
     meta_whatsapp: {
+      status: "untested",
+    },
+    groq_ai: {
       status: "untested",
     },
     gemini_ai: {
@@ -44,7 +49,33 @@ export async function GET(request: NextRequest) {
     };
   }
 
-  // 2. Test Gemini API
+  // 2. Test Groq API (Primary if configured)
+  if (groqKey) {
+    try {
+      const res = await fetch("https://api.groq.com/openai/v1/models", {
+        headers: {
+          Authorization: `Bearer ${groqKey}`,
+        },
+      });
+      const data = await res.json();
+      if (res.ok) {
+        diagnostics.groq_ai = {
+          status: "healthy",
+          valid: true,
+          default_model: process.env.AI_MODEL || "openai/gpt-oss-120b",
+          active: true,
+        };
+      } else {
+        diagnostics.groq_ai = { status: "error", error: data?.error?.message || data };
+      }
+    } catch (err: any) {
+      diagnostics.groq_ai = { status: "network_error", error: err.message };
+    }
+  } else {
+    diagnostics.groq_ai = { status: "not_configured" };
+  }
+
+  // 3. Test Gemini API
   if (geminiKey) {
     try {
       const res = await fetch(
@@ -70,7 +101,7 @@ export async function GET(request: NextRequest) {
     diagnostics.gemini_ai = { status: "missing_api_key" };
   }
 
-  // 3. Test Meta WhatsApp Phone ID & Token
+  // 4. Test Meta WhatsApp Phone ID & Token
   if (phoneId && token) {
     try {
       const res = await fetch(

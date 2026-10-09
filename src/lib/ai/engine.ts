@@ -10,7 +10,21 @@ export interface AIResponseResult {
 }
 
 function getAIClient(provider?: string) {
-  // 1. Google Gemini (User's primary requested provider)
+  // 1. Groq (Primary requested provider: Ultra-fast Groq LPU with native tool calling)
+  if (provider === "groq" || process.env.GROQ_API_KEY) {
+    const apiKey = process.env.GROQ_API_KEY;
+    if (apiKey && !apiKey.startsWith("your-") && apiKey !== "mock") {
+      return {
+        client: new OpenAI({
+          baseURL: "https://api.groq.com/openai/v1",
+          apiKey,
+        }),
+        defaultModel: process.env.AI_MODEL || "openai/gpt-oss-120b",
+      };
+    }
+  }
+
+  // 2. Google Gemini
   if (provider === "gemini" || process.env.GEMINI_API_KEY) {
     const apiKey = process.env.GEMINI_API_KEY;
     if (apiKey && !apiKey.startsWith("your-") && apiKey !== "mock") {
@@ -20,20 +34,6 @@ function getAIClient(provider?: string) {
           apiKey,
         }),
         defaultModel: "gemini-2.5-flash",
-      };
-    }
-  }
-
-  // 2. Groq
-  if (provider === "groq" || process.env.GROQ_API_KEY) {
-    const apiKey = process.env.GROQ_API_KEY;
-    if (apiKey && !apiKey.startsWith("your-")) {
-      return {
-        client: new OpenAI({
-          baseURL: "https://api.groq.com/openai/v1",
-          apiKey,
-        }),
-        defaultModel: "llama-3.3-70b-versatile",
       };
     }
   }
