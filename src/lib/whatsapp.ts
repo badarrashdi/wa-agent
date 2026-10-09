@@ -28,8 +28,8 @@ export async function sendWhatsAppMessage(
   const token = process.env.WHATSAPP_ACCESS_TOKEN;
   const phoneId = process.env.WHATSAPP_PHONE_NUMBER_ID;
 
-  // Clean phone number (strip whitespace, parentheses, dashes)
-  const cleanTo = to.replace(/[\s\(\)\-]/g, "");
+  // Clean phone number (strip +, whitespace, parentheses, dashes - Meta expects pure digits e.g. 918802368235)
+  const cleanTo = to.replace(/\D/g, "");
 
   if (!isWhatsAppConfigured()) {
     console.log(
@@ -90,7 +90,7 @@ export async function sendWhatsAppInteractiveButtons(
 ): Promise<WhatsAppSendResult> {
   const token = process.env.WHATSAPP_ACCESS_TOKEN;
   const phoneId = process.env.WHATSAPP_PHONE_NUMBER_ID;
-  const cleanTo = to.replace(/[\s\(\)\-]/g, "");
+  const cleanTo = to.replace(/\D/g, "");
 
   if (!isWhatsAppConfigured()) {
     console.log(`[WhatsApp Sim Interactive] -> Outgoing to ${cleanTo}: ${buttons.map((b) => b.title).join(", ")}`);
